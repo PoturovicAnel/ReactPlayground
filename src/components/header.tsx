@@ -6,11 +6,11 @@ interface Props{
 }
 
 /** React function component */
-export default function Header(props: Props) {
+export default function Header() {
 
     return (
         <div style={header}>
-            <Link to="/" style={headerItem} onClick={props.onHeaderTextClick}>
+            <Link to="/" style={headerItem}>
         
             React Playground
         </Link>

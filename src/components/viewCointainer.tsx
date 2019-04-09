@@ -1,18 +1,19 @@
 import React, { CSSProperties } from 'react';
 import MainView from './mainCointainer';
-import { View } from './layout';
 import DetailView from './detailView';
+import { Route } from 'react-router';
 
-interface Props{
-    onSectionItemClick: (view: View) => void
-    view: View
-}
 
-export default function ViewCointainer(props: Props){
-    if(props.view === "Main"){
-        return <MainView onSectionItemClick={props.onSectionItemClick}/>
+export default function ViewCointainer(){
+   return (
+    <div>
+            <Route exact path="/" component={MainView} />
+            <Route path="/forest" render={() => <DetailView view="Forest"/>} />
+            <Route path="/sky" render={() => <DetailView view="Sky"/>} />
+            <Route path="/desert" render={() => <DetailView view="Desert"/>} />
+            
+    </div>
 
-    }
-    return <DetailView view={props.view}/> 
+   )
 
 }
